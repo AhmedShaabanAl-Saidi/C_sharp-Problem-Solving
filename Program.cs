@@ -18,12 +18,44 @@
         //    PrintMassage(userName);
         //}
 
-        //// Print Massage 
+        // Print Massage 
         //public static void PrintMassage(string massage)
         //{
         //    Console.WriteLine("--------------------------------");
-        //    Console.WriteLine($"Your Name is : {massage}");
+        //    Console.WriteLine(massage);
         //    Console.WriteLine("--------------------------------");
+        //}
+
+        ////////////////////////////////////////////////////////////
+        
+        //public static bool ReadNumder(string fieldNumber , out int number)
+        //{
+        //    bool Flag;
+
+        //    Console.Write($"Please Enter {fieldNumber} :");
+        //    Flag = int.TryParse(Console.ReadLine(), out number);
+        //    if (!Flag)
+        //    {
+        //         Console.WriteLine("Invalid Number Try Again");
+        //         return false;
+        //    }
+
+        //    return true;
+        //}
+
+        // 3- Sum2numbers
+        //public static void Sum2numbers()
+        //{
+        //    Console.WriteLine("Welcome in Sum Two Numbers App :");
+        //    int number1, number2;
+
+        //    if (!ReadNumder("Number 1", out number1))
+        //        return;
+
+        //    if (!ReadNumder("Number 2", out number2))
+        //        return;
+            
+        //    PrintMassage($"{number1} + {number2} = {number1 + number2}");
         //}
 
         static void Main(string[] args)
@@ -33,6 +65,11 @@
 
             // 2- Printnamefromuser
             //PrintNameFromUser();
+
+            ///////////////////////////////////////////////////////
+
+            // 3 - Sum2numbers
+            //Sum2numbers();
         }
     }
 }
