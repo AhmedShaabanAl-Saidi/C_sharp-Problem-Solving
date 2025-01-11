@@ -41,6 +41,36 @@
         }
         #endregion
 
+        #region SelectProgram Function
+        public static void SelectProgram(int userChoiceNumbr)
+        {
+            switch (userChoiceNumbr)
+            {
+                case 1:
+                    PrintName();
+                    break;
+                case 2:
+                    PrintNameFromUser();
+                    break;
+                case 3:
+                    Sum2numbers();
+                    break;
+                case 4:
+                    Avarage3numbers();
+                    break;
+                case 5:
+                    Areaofrectangle();
+                    break;
+                case 6:
+                    Areaoftriangle();
+                    break;
+                case 7:
+                    CircleAreaThroughDiameter();
+                    break;
+            }
+        } 
+        #endregion
+
         ////////////////////////////////////////////////////////////
         // main Functions
 
@@ -131,6 +161,18 @@
         }
         #endregion
 
+        #region Areaoftriangle
+        public static void CircleAreaThroughDiameter()
+        {
+            Welcome("Welcome in Circle Area Through Diameter App :");
+            int diameter;
+
+            if (!ReadNumder("The Diameter Of Circle", out diameter))
+                return;
+
+            PrintMassage($"The Circle Area Through Diameter = (3.14*4) / ({diameter} * {diameter}) = {(3.14*4) / (diameter * diameter)}");
+        }
+        #endregion
         static void Main(string[] args)
         {
             PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
@@ -141,33 +183,14 @@
                 4- Avarage Three Numbers
                 5- Area Of Rectangle
                 6- Area Of Triangle
+                7- Circle Area Through Diameter
                 """) ;
 
             int userChoiceNumbr;
 
             if(!ReadNumder("User Choices" ,out userChoiceNumbr))
                return;
-            
-            switch (userChoiceNumbr) { 
-                case 1:
-                    PrintName();
-                    break;
-                case 2:
-                    PrintNameFromUser();
-                    break;
-                case 3:
-                    Sum2numbers();
-                    break;
-                case 4:
-                    Avarage3numbers();
-                    break;
-                case 5:
-                    Areaofrectangle();
-                    break;
-                case 6:
-                    Areaoftriangle();
-                    break;
-            }
+            SelectProgram(userChoiceNumbr);
         }
     }
 }
