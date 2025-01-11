@@ -64,7 +64,6 @@
         #endregion
 
         #region Sum2numbers Function
-        // 3- Sum2numbers
         public static void Sum2numbers()
         {
             Welcome("Welcome in Sum Two Numbers App :");
@@ -100,6 +99,22 @@
         }
         #endregion
 
+        #region Areaofrectangle
+        public static void Areaofrectangle()
+        {
+            Welcome("Welcome in Area Of Rectangle App :");
+            int length, width;
+
+            if (!ReadNumder("The Length Of Rectangle", out length))
+                return;
+
+            if (!ReadNumder("The Width Of Rectangle", out width))
+                return;
+
+            PrintMassage($"The Area Of Rectangle = {length} * {width} = {length * width}");
+        } 
+        #endregion
+
         static void Main(string[] args)
         {
             PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
@@ -108,6 +123,7 @@
                 2- Print Name From User
                 3- Sum Two Numbers
                 4- Avarage Three Numbers
+                5- Area Of Rectangle
                 """) ;
 
             int userChoiceNumbr;
@@ -127,6 +143,9 @@
                     break;
                 case 4:
                     Avarage3numbers();
+                    break;
+                case 5:
+                    Areaofrectangle();
                     break;
             }
         }
