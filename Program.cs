@@ -112,7 +112,23 @@
                 return;
 
             PrintMassage($"The Area Of Rectangle = {length} * {width} = {length * width}");
-        } 
+        }
+        #endregion
+
+        #region Areaoftriangle
+        public static void Areaoftriangle()
+        {
+            Welcome("Welcome in Area Of Triangle App :");
+            int theBase, hight;
+
+            if (!ReadNumder("The Base Of Triangle", out theBase))
+                return;
+
+            if (!ReadNumder("The Hight Of Triangle", out hight))
+                return;
+
+            PrintMassage($"The Area Of Triangle = .5 * {theBase} * {hight} = {.5 * theBase * hight}");
+        }
         #endregion
 
         static void Main(string[] args)
@@ -124,6 +140,7 @@
                 3- Sum Two Numbers
                 4- Avarage Three Numbers
                 5- Area Of Rectangle
+                6- Area Of Triangle
                 """) ;
 
             int userChoiceNumbr;
@@ -146,6 +163,9 @@
                     break;
                 case 5:
                     Areaofrectangle();
+                    break;
+                case 6:
+                    Areaoftriangle();
                     break;
             }
         }
