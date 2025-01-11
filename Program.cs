@@ -73,6 +73,9 @@
                 case 9:
                     HelfNumber();
                     break;
+                case 10:
+                    SwapTwoNumbers();
+                    break;
             }
         }
         #endregion
@@ -213,6 +216,26 @@
             PrintMassage($"The Circle Area Through Diameter = (3.14*4) / ({diameter} * {diameter}) = {(3.14*4) / (diameter * diameter)}");
         }
         #endregion
+
+        #region Swap Two Numbers Function
+        public static void SwapTwoNumbers()
+        {
+            Welcome("Welcome in Swap Two Numbers App :");
+            int number1, number2 , temp;
+
+            if (!ReadNumder("Number 1", out number1))
+                return;
+
+            if (!ReadNumder("Number 2", out number2))
+                return;
+
+            temp = number1;
+            number1 = number2;
+            number2 = temp;
+
+            PrintMassage($"Numbers After Swaping Number 1 = {number1} , Number 2 = {number2}");
+        }
+        #endregion
         static void Main(string[] args)
         {
             PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
@@ -226,6 +249,7 @@
                 7- Circle Area Through Diameter
                 8- Print FullName
                 9- Helf Number
+                10-Swap Two Numbers
                 """) ;
 
             int userChoiceNumbr;
