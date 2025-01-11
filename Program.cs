@@ -67,7 +67,21 @@
                 case 7:
                     CircleAreaThroughDiameter();
                     break;
+                case 8:
+                    PrintUserInfo();
+                    break;
+                case 9:
+                    HelfNumber();
+                    break;
             }
+        }
+        #endregion
+
+        #region ReadString Function
+        public static string ReadString(string fieldNumber)
+        {
+            Console.Write($"Please Enter {fieldNumber} :");
+            return Console.ReadLine();
         } 
         #endregion
 
@@ -161,6 +175,32 @@
         }
         #endregion
 
+        #region PrintUserInfo
+        public static void PrintUserInfo()
+        {
+            Welcome("Welcome in Print User Info App :");
+
+            PrintMassage($"""
+                        Your Name is : {ReadString("Your Name")}
+                        Your Jop Title is : {ReadString("Your Job Title")}
+                        Working At : {ReadString("Your Company You Working At")}
+                        """);
+        }
+        #endregion
+
+        #region Helf Number Function
+        public static void HelfNumber()
+        {
+            Welcome("Welcome in Helf Number App :");
+            int number;
+
+            if (!ReadNumder("Number ", out number))
+                return;
+
+            PrintMassage($"Helf Of {number} = {number} / 2 = {number/2}");
+        }
+        #endregion
+
         #region Areaoftriangle
         public static void CircleAreaThroughDiameter()
         {
@@ -184,6 +224,8 @@
                 5- Area Of Rectangle
                 6- Area Of Triangle
                 7- Circle Area Through Diameter
+                8- Print FullName
+                9- Helf Number
                 """) ;
 
             int userChoiceNumbr;
