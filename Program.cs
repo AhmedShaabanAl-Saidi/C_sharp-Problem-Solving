@@ -97,6 +97,9 @@ namespace C_sharp_Problem_Solving
                 case 16:
                     CompareTwoNumbers();
                     break;
+                case 17:
+                    CompareThreeNumbers();
+                    break;
             }
         }
         #endregion
@@ -381,6 +384,32 @@ namespace C_sharp_Problem_Solving
                 PrintMassage($"{userNum2} is Greater than {userNum1}");
             else
                 PrintMassage($"{userNum1} It equals {userNum2}");
+        }
+        #endregion
+
+        #region CompareThreeNumbers Function
+        public static void CompareThreeNumbers()
+        {
+            Welcome("Welcome in Compare Three Numbers App :");
+            int userNum1, userNum2, userNum3;
+
+            if (!ReadNumder("Number1", out userNum1))
+                return;
+
+            if (!ReadNumder("Number2", out userNum2))
+                return;
+
+            if (!ReadNumder("Number3", out userNum3))
+                return;
+
+            if (userNum1 > userNum2 && userNum1 > userNum3)
+                PrintMassage($"{userNum1} is Greater than {userNum2} and {userNum3}");
+            else if (userNum2 > userNum1 && userNum2 > userNum3)
+                PrintMassage($"{userNum2} is Greater than {userNum1} and {userNum3}");
+            else if (userNum3 > userNum1 && userNum3 > userNum2)
+                PrintMassage($"{userNum3} is Greater than {userNum1} and {userNum2}");
+            else
+                PrintMassage($"{userNum1} , {userNum2} , {userNum3} : Are Equal to each other");
         } 
         #endregion
 
@@ -404,6 +433,7 @@ namespace C_sharp_Problem_Solving
                 14- Centure Of The Year
                 15- Validate Percentage
                 16- Compare Two Numbers
+                17- Compare Three Numbers
                 """) ;
 
             int userChoiceNumbr;
