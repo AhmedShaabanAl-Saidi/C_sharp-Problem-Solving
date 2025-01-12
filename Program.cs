@@ -94,6 +94,9 @@ namespace C_sharp_Problem_Solving
                 case 15:
                     ValidatePercentage();
                     break;
+                case 16:
+                    CompareTwoNumbers();
+                    break;
             }
         }
         #endregion
@@ -357,6 +360,27 @@ namespace C_sharp_Problem_Solving
                 PrintMassage($"{userPercentage} is Valid Percentage");
             else
                 PrintMassage($"{userPercentage} is Invalid Percentage");
+        }
+        #endregion
+
+        #region CompareTwoNumbers Function
+        public static void CompareTwoNumbers()
+        {
+            Welcome("Welcome in Compare Two Numbers App :");
+            int userNum1, userNum2;
+
+            if (!ReadNumder("Number1", out userNum1))
+                return;
+
+            if (!ReadNumder("Number2", out userNum2))
+                return;
+
+            if (userNum1 > userNum2)
+                PrintMassage($"{userNum1} is Greater than {userNum2}");
+            else if (userNum1 < userNum2)
+                PrintMassage($"{userNum2} is Greater than {userNum1}");
+            else
+                PrintMassage($"{userNum1} It equals {userNum2}");
         } 
         #endregion
 
@@ -379,6 +403,7 @@ namespace C_sharp_Problem_Solving
                 13- Odd Or Even
                 14- Centure Of The Year
                 15- Validate Percentage
+                16- Compare Two Numbers
                 """) ;
 
             int userChoiceNumbr;
