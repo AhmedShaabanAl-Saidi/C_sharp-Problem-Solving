@@ -85,6 +85,9 @@ namespace C_sharp_Problem_Solving
                 case 12:
                     CanEnterColledge();
                     break;
+                case 13:
+                    OddOrEven();
+                    break;
             }
         }
         #endregion
@@ -300,8 +303,25 @@ namespace C_sharp_Problem_Solving
                 else
                     PrintMassage("Rejected");
             }
+        }
+        #endregion
+
+        #region OddOrEven Function
+        public static void OddOrEven()
+        {
+            Welcome("Welcome in Odd Or Even App :");
+            int userNumber;
+
+            if (!ReadNumder("Your Number", out userNumber))
+                return;
+
+            if (userNumber % 2 == 0)
+                PrintMassage($"{userNumber} is Odd");
+            else
+                PrintMassage($"{userNumber} is Even");
         } 
         #endregion
+
         static void Main(string[] args)
         {
             PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
@@ -318,6 +338,7 @@ namespace C_sharp_Problem_Solving
                 10- Swap Two Numbers
                 11- Pass Or Fail
                 12- Can Enter Colledge
+                13- Odd Or Even
                 """) ;
 
             int userChoiceNumbr;
