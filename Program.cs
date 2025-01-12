@@ -112,6 +112,9 @@ namespace C_sharp_Problem_Solving
                 case 21:
                     SumFromNto1();
                     break;
+                case 22:
+                    SubtractFrom1toN();
+                    break;
             }
         }
         #endregion
@@ -530,7 +533,26 @@ namespace C_sharp_Problem_Solving
             }
 
             PrintMassage($"Sum Numbers from {userNum} to 1 = {resuilt}");
-        } 
+        }
+        #endregion
+
+        #region SubtractFromNto1 Function
+        public static void SubtractFrom1toN()
+        {
+            Welcome("Welcome in Subtract From 1 to N App :");
+
+            int userNum, resuilt = 0;
+
+            if (!ReadNumder("Number you Wanna Subtract to it", out userNum))
+                return;
+
+            for (int i = 1; i <= userNum; i++)
+            {
+                resuilt -= i;
+            }
+
+            PrintMassage($"Subtracting Numbers from {userNum} to 1 = {resuilt}");
+        }
         #endregion
 
         static void Main(string[] args)
@@ -563,6 +585,7 @@ namespace C_sharp_Problem_Solving
                 19- Print Sum From 1 To 99
                 20- Multiply From 1 To N
                 21- Sum From N to 1
+                22- Subtract From 1 to N
                 """);
 
                 int userChoiceNumbr;
