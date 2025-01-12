@@ -115,6 +115,9 @@ namespace C_sharp_Problem_Solving
                 case 22:
                     SubtractFrom1toN();
                     break;
+                case 23:
+                    GetMaxNumberFromUserChoices();
+                    break;
             }
         }
         #endregion
@@ -555,6 +558,29 @@ namespace C_sharp_Problem_Solving
         }
         #endregion
 
+        #region GetMaxNumberFromUserChoices Function
+        public static void GetMaxNumberFromUserChoices()
+        {
+            Welcome("Welcome in Get Max Number From User Choices App :");
+
+            int maxNum = 0, userNum, userCounter;
+
+            if (!ReadNumder("Number you Wanna Count to it", out userCounter))
+                return;
+
+            for (int i = 0; i < userCounter; i++)
+            {
+                if (!ReadNumder("Number you Wanna Check it if Max or Not", out userNum))
+                    return;
+
+                if (userNum > maxNum)
+                    maxNum = userNum;
+            }
+
+            PrintMassage($"Max Number = {maxNum}");
+        } 
+        #endregion
+
         static void Main(string[] args)
         {
             bool isWorking = true;
@@ -586,6 +612,7 @@ namespace C_sharp_Problem_Solving
                 20- Multiply From 1 To N
                 21- Sum From N to 1
                 22- Subtract From 1 to N
+                23- Get Max Number From User Choices
                 """);
 
                 int userChoiceNumbr;
