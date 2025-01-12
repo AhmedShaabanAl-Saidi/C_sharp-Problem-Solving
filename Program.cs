@@ -472,8 +472,13 @@ namespace C_sharp_Problem_Solving
 
         static void Main(string[] args)
         {
-            PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
-            Console.WriteLine("""
+            bool isWorking = true;
+            char userChoice ;
+
+            while (isWorking)
+            {
+                PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
+                Console.WriteLine("""
                 1- Write your Name
                 2- Print Name From User
                 3- Sum Two Numbers
@@ -492,13 +497,25 @@ namespace C_sharp_Problem_Solving
                 16- Compare Two Numbers
                 17- Compare Three Numbers
                 18- Sales Salary
-                """) ;
+                """);
 
-            int userChoiceNumbr;
+                int userChoiceNumbr;
 
-            if(!ReadNumder("User Choices" ,out userChoiceNumbr))
-               return;
-            SelectProgram(userChoiceNumbr);
+                if (!ReadNumder("User Choices", out userChoiceNumbr))
+                    return;
+                SelectProgram(userChoiceNumbr);
+
+
+                ReadChar("Are you Wanna continue",out userChoice);
+
+                if (userChoice.ToString().ToLower() == "y")
+                {
+                    Console.Clear();
+                    isWorking = true;
+                }
+                else
+                    isWorking = false;
+            }
         }
     }
 }
