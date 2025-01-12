@@ -106,6 +106,9 @@ namespace C_sharp_Problem_Solving
                 case 19:
                     PrintSumFrom1To99();
                     break;
+                case 20:
+                    MultiplyFrom1ToN();
+                    break;
             }
         }
         #endregion
@@ -476,6 +479,8 @@ namespace C_sharp_Problem_Solving
         #region PrintSumFrom1To99 Function
         public static void PrintSumFrom1To99()
         {
+            Welcome("Welcome in Print Sum From 1 To 99 App :");
+
             int sum = 0;
 
             for (int i = 1; i <= 99; i++)
@@ -485,6 +490,25 @@ namespace C_sharp_Problem_Solving
 
             PrintMassage($"Numbers Sum from 1 to 99 = {sum}");
         }
+        #endregion
+
+        #region MultiplyFrom1ToN Function
+        public static void MultiplyFrom1ToN()
+        {
+            Welcome("Welcome in Multiply From 1 To N App :");
+
+            int userNum, resuilt = 1;
+
+            if (!ReadNumder("Number you Wanna Multiply to it", out userNum))
+                return;
+
+            for (int i = 1; i <= userNum; i++)
+            {
+                resuilt *= i;
+            }
+
+            PrintMassage($"Multiply Numbers from 1 to {userNum} = {resuilt}");
+        } 
         #endregion
 
         static void Main(string[] args)
@@ -515,6 +539,7 @@ namespace C_sharp_Problem_Solving
                 17- Compare Three Numbers
                 18- Sales Salary
                 19- Print Sum From 1 To 99
+                20- Multiply From 1 To N
                 """);
 
                 int userChoiceNumbr;
