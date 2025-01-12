@@ -91,6 +91,9 @@ namespace C_sharp_Problem_Solving
                 case 14:
                     CentureOfTheYear();
                     break;
+                case 15:
+                    ValidatePercentage();
+                    break;
             }
         }
         #endregion
@@ -338,6 +341,22 @@ namespace C_sharp_Problem_Solving
                 PrintMassage($"The Centure Of The Year Is : {userYear / 100}");
             else
                 PrintMassage($"The Centure Of The Year Is : {(userYear / 100) + 1}");
+        }
+        #endregion
+
+        #region ValidatePercentage Function
+        public static void ValidatePercentage()
+        {
+            Welcome("Welcome in Validate Percentage App :");
+            int userPercentage;
+
+            if (!ReadNumder("Your Percentage Number", out userPercentage))
+                return;
+
+            if (userPercentage >= 0 && userPercentage <= 100)
+                PrintMassage($"{userPercentage} is Valid Percentage");
+            else
+                PrintMassage($"{userPercentage} is Invalid Percentage");
         } 
         #endregion
 
@@ -359,6 +378,7 @@ namespace C_sharp_Problem_Solving
                 12- Can Enter Colledge
                 13- Odd Or Even
                 14- Centure Of The Year
+                15- Validate Percentage
                 """) ;
 
             int userChoiceNumbr;
