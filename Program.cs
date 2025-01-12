@@ -100,6 +100,9 @@ namespace C_sharp_Problem_Solving
                 case 17:
                     CompareThreeNumbers();
                     break;
+                case 18:
+                    SalesSalary();
+                    break;
             }
         }
         #endregion
@@ -126,7 +129,24 @@ namespace C_sharp_Problem_Solving
             }
 
             return true;
-        } 
+        }
+        #endregion
+
+        #region ReadDecimalNumder Function
+        public static bool ReadDecimalNumder(string fieldNumber, out decimal number)
+        {
+            bool Flag;
+
+            Console.Write($"Please Enter {fieldNumber} :");
+            Flag = decimal.TryParse(Console.ReadLine(), out number);
+            if (!Flag)
+            {
+                Console.WriteLine("Invalid Number Try Again");
+                return false;
+            }
+
+            return true;
+        }
         #endregion
 
         ////////////////////////////////////////////////////////////
@@ -410,6 +430,43 @@ namespace C_sharp_Problem_Solving
                 PrintMassage($"{userNum3} is Greater than {userNum1} and {userNum2}");
             else
                 PrintMassage($"{userNum1} , {userNum2} , {userNum3} : Are Equal to each other");
+        }
+        #endregion
+
+        #region SalesSalary Function
+        public static void SalesSalary()
+        {
+            Welcome("Welcome in Sales App :");
+            decimal sales, salary , commission;
+
+            if (!ReadDecimalNumder("your Fixed Salary", out salary))
+                return;
+
+            if (!ReadDecimalNumder("your Total Sales", out sales))
+                return;
+
+            if (sales >= 1000000)
+            {
+                commission = 0.01m;
+                PrintMassage($"Your salary after commission (0.01 * {salary}) = {salary += salary * commission}");
+            }
+            else if (sales >= 500000)
+            {
+                commission = 0.02m;
+                PrintMassage($"Your salary after commission (0.02 * {salary}) = {salary += salary * commission}");
+            }
+            else if (sales >= 100000)
+            {
+                commission = 0.03m;
+                PrintMassage($"Your salary after commission (0.03 * {salary}) = {salary += salary * commission}");
+            }
+            else if (sales >= 50000)
+            {
+                commission = 0.04m;
+                PrintMassage($"Your salary after commission (0.04 * {salary}) = {salary += salary * commission}");
+            }
+            else
+                PrintMassage("You don't have a commission.");
         } 
         #endregion
 
@@ -434,6 +491,7 @@ namespace C_sharp_Problem_Solving
                 15- Validate Percentage
                 16- Compare Two Numbers
                 17- Compare Three Numbers
+                18- Sales Salary
                 """) ;
 
             int userChoiceNumbr;
