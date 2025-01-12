@@ -1,4 +1,7 @@
-﻿namespace C_sharp_Problem_Solving
+﻿using System.Diagnostics.Metrics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace C_sharp_Problem_Solving
 {
     internal class Program
     {
@@ -76,6 +79,12 @@
                 case 10:
                     SwapTwoNumbers();
                     break;
+                case 11:
+                    PassOrFail();
+                    break;
+                case 12:
+                    CanEnterColledge();
+                    break;
             }
         }
         #endregion
@@ -85,6 +94,23 @@
         {
             Console.Write($"Please Enter {fieldNumber} :");
             return Console.ReadLine();
+        }
+        #endregion
+
+        #region ReadChar Function
+        public static bool ReadChar(string fieldNumber, out char userChar)
+        {
+            bool Flag;
+
+            Console.Write($"Please Enter {fieldNumber} \"Y\" for Yes or \"N\" for No :");
+            Flag = char.TryParse(Console.ReadLine(), out userChar);
+            if (!Flag)
+            {
+                Console.WriteLine("Invalid Input Try Again");
+                return false;
+            }
+
+            return true;
         } 
         #endregion
 
@@ -236,6 +262,46 @@
             PrintMassage($"Numbers After Swaping Number 1 = {number1} , Number 2 = {number2}");
         }
         #endregion
+
+        #region PassOrFail Function
+        public static void PassOrFail()
+        {
+            Welcome("Welcome in Pass Or Fail App :");
+            int userGrade;
+            if (!ReadNumder("Your Grade", out userGrade))
+                return;
+            if (userGrade < 50)
+                PrintMassage("Fail");
+            else
+                PrintMassage("Pass");
+        }
+
+        #endregion
+
+        #region CanEnterColledge Function
+        public static void CanEnterColledge()
+        {
+            Welcome("Welcome in Can Enter Colledge App :");
+            int userGrade;
+            char canPay;
+
+            if (!ReadNumder("Your Grade", out userGrade))
+                return;
+
+            if (userGrade >= 90)
+                PrintMassage("Accepted");
+            else
+            {
+                if (!ReadChar("If You can Pay Or not", out canPay))
+                    return;
+
+                if (canPay.ToString().ToLower() == "y")
+                    PrintMassage("Accepted");
+                else
+                    PrintMassage("Rejected");
+            }
+        } 
+        #endregion
         static void Main(string[] args)
         {
             PrintMassage("Welcome in Problem Solving App Please Enter Your App From Choices");
@@ -249,7 +315,9 @@
                 7- Circle Area Through Diameter
                 8- Print FullName
                 9- Helf Number
-                10-Swap Two Numbers
+                10- Swap Two Numbers
+                11- Pass Or Fail
+                12- Can Enter Colledge
                 """) ;
 
             int userChoiceNumbr;
