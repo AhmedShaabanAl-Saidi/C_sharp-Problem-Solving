@@ -103,6 +103,9 @@ namespace C_sharp_Problem_Solving
                 case 18:
                     SalesSalary();
                     break;
+                case 19:
+                    PrintSumFrom1To99();
+                    break;
             }
         }
         #endregion
@@ -467,7 +470,21 @@ namespace C_sharp_Problem_Solving
             }
             else
                 PrintMassage("You don't have a commission.");
-        } 
+        }
+        #endregion
+
+        #region PrintSumFrom1To99 Function
+        public static void PrintSumFrom1To99()
+        {
+            int sum = 0;
+
+            for (int i = 1; i <= 99; i++)
+            {
+                sum += i;
+            }
+
+            PrintMassage($"Numbers Sum from 1 to 99 = {sum}");
+        }
         #endregion
 
         static void Main(string[] args)
@@ -497,6 +514,7 @@ namespace C_sharp_Problem_Solving
                 16- Compare Two Numbers
                 17- Compare Three Numbers
                 18- Sales Salary
+                19- Print Sum From 1 To 99
                 """);
 
                 int userChoiceNumbr;
