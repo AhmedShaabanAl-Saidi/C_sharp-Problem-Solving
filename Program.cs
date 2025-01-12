@@ -88,6 +88,9 @@ namespace C_sharp_Problem_Solving
                 case 13:
                     OddOrEven();
                     break;
+                case 14:
+                    CentureOfTheYear();
+                    break;
             }
         }
         #endregion
@@ -319,6 +322,22 @@ namespace C_sharp_Problem_Solving
                 PrintMassage($"{userNumber} is Odd");
             else
                 PrintMassage($"{userNumber} is Even");
+        }
+        #endregion
+
+        #region CentureOfTheYear Function
+        public static void CentureOfTheYear()
+        {
+            Welcome("Welcome in Centure Of The Year App :");
+            int userYear;
+
+            if (!ReadNumder("Your Year You Wanna know Centure it", out userYear))
+                return;
+
+            if (userYear % 100 == 0)
+                PrintMassage($"The Centure Of The Year Is : {userYear / 100}");
+            else
+                PrintMassage($"The Centure Of The Year Is : {(userYear / 100) + 1}");
         } 
         #endregion
 
@@ -339,6 +358,7 @@ namespace C_sharp_Problem_Solving
                 11- Pass Or Fail
                 12- Can Enter Colledge
                 13- Odd Or Even
+                14- Centure Of The Year
                 """) ;
 
             int userChoiceNumbr;
