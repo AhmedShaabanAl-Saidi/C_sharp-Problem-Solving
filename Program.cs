@@ -109,6 +109,9 @@ namespace C_sharp_Problem_Solving
                 case 20:
                     MultiplyFrom1ToN();
                     break;
+                case 21:
+                    SumFromNto1();
+                    break;
             }
         }
         #endregion
@@ -508,6 +511,25 @@ namespace C_sharp_Problem_Solving
             }
 
             PrintMassage($"Multiply Numbers from 1 to {userNum} = {resuilt}");
+        }
+        #endregion
+
+        #region SumFromNto1 Function
+        public static void SumFromNto1()
+        {
+            Welcome("Welcome in Sum From N to 1 App :");
+
+            int userNum, resuilt = 0;
+
+            if (!ReadNumder("Number you Wanna Sum from it", out userNum))
+                return;
+
+            for (int i = userNum; i >= 1; i--)
+            {
+                resuilt += i;
+            }
+
+            PrintMassage($"Sum Numbers from {userNum} to 1 = {resuilt}");
         } 
         #endregion
 
@@ -540,6 +562,7 @@ namespace C_sharp_Problem_Solving
                 18- Sales Salary
                 19- Print Sum From 1 To 99
                 20- Multiply From 1 To N
+                21- Sum From N to 1
                 """);
 
                 int userChoiceNumbr;
